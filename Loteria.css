@@ -1,0 +1,44 @@
+#secLoteriaModoLotoFacil, #secLoteriaModoQuina, #secLoteriaModoMegaSena, #inpNumero16LoteriaLotoFacil, 
+#inpNumero17LoteriaLotoFacil, #inpNumero18LoteriaLotoFacil, #inpNumero19LoteriaLotoFacil,
+#inpNumero20LoteriaLotoFacil, #inpNumero6LoteriaQuina, #inpNumero7LoteriaQuina, #inpNumero8LoteriaQuina,
+#inpNumero9LoteriaQuina, #inpNumero10LoteriaQuina, #inpNumero11LoteriaQuina, #inpNumero12LoteriaQuina,
+#inpNumero13LoteriaQuina, #inpNumero14LoteriaQuina, #inpNumero15LoteriaQuina, #inpNumero7LoteriaMegaSena,
+#inpNumero8LoteriaMegaSena, #inpNumero9LoteriaMegaSena, #inpNumero10LoteriaMegaSena, #inpNumero11LoteriaMegaSena,
+#inpNumero12LoteriaMegaSena, #inpNumero13LoteriaMegaSena, #inpNumero14LoteriaMegaSena, #inpNumero15LoteriaMegaSena{
+    display: none;
+}
+
+input{
+    padding: 5px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    text-align: center;
+    border-color: black;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+button{
+    cursor: pointer;   
+}
+
+section{
+    text-align: center;
+    background-color: orange;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+hr {
+    visibility: hidden;
+}
+
+button {
+    font-weight: bold;   
+    font-size: larger;
+    border-radius: 10px;
+    border-color: green;
+    background-color: yellow;
+}
