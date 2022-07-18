@@ -1,4 +1,5 @@
 
+
 let contador = 0
 let sorteio = []
 let acertos = 0
@@ -66,8 +67,8 @@ for (let i = 0; sorteio.length >  i; i++){
     numero16 = document.getElementById("inpNumero16LoteriaLotoFacil").value
     numero17 = document.getElementById("inpNumero17LoteriaLotoFacil").value
     numero18 = document.getElementById("inpNumero18LoteriaLotoFacil").value
-    numero18 = document.getElementById("inpNumero19LoteriaLotoFacil").value
-    numero18 = document.getElementById("inpNumero20LoteriaLotoFacil").value
+    numero19 = document.getElementById("inpNumero19LoteriaLotoFacil").value
+    numero20 = document.getElementById("inpNumero20LoteriaLotoFacil").value
 
     if (numero1 == sorteio[i]){
         acertos++
@@ -152,12 +153,12 @@ for (let i = 0; sorteio.length >  i; i++){
         acertos++
         document.getElementById("inpNumero20LoteriaLotoFacil").style.backgroundColor = 'green'
     }
- 
+}
     
     if (contador >= 1){
         document.getElementById("botaoLoteriaLotoFacil").disabled = true;
     }
-}
+
 if (acertos < 11 ){
     document.getElementById('divResultadosLotoFacil').innerHTML = 'Resultados: ' + acertos + ' acertos!'
 }
