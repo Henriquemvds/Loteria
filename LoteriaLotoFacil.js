@@ -1,13 +1,14 @@
 
+let contador = 0 //Indicador para saber a quantidade de tentativas jogadas
+let sorteio = [] //Vetor onde será guardado os números do sorteio
+let acertos = 0 //Indicador da quantidade de números em acertos
+let cliques = 0 //INdicador da quantidade de vezes clicada em um botão
 
-let contador = 0
-let sorteio = []
-let acertos = 0
-let cliques = 0
+// Ir para a tela do modo fácil
 function modoLotoFacil(){
     document.getElementById('secJogos').style.display = 'none'
     document.getElementById('secLoteriaModoLotoFacil').style.display = 'block'
-    
+    // E criar os números aletótios do sorteio
     let numeroSorteado = Math.floor(Math.random() * (26-1) + 1)
     sorteio[0] = numeroSorteado
     let i = 1
@@ -26,7 +27,9 @@ i = i + 1
 } 
 }
 
+//Botão de tentativa do jogo Loto Facil
 function tenteLoteriaLotoFacil(){
+    //Se errar as bolinhas ficam vermelhas
     document.getElementById("inpNumero1LoteriaLotoFacil").style.backgroundColor = 'red'
     document.getElementById("inpNumero2LoteriaLotoFacil").style.backgroundColor = 'red'
     document.getElementById("inpNumero3LoteriaLotoFacil").style.backgroundColor = 'red'
@@ -47,7 +50,9 @@ function tenteLoteriaLotoFacil(){
     document.getElementById("inpNumero18LoteriaLotoFacil").style.backgroundColor = 'red'
     document.getElementById("inpNumero19LoteriaLotoFacil").style.backgroundColor = 'red'
     document.getElementById("inpNumero20LoteriaLotoFacil").style.backgroundColor = 'red'
+    //Conta uma tentativa
     let contador = 1
+    //Pega os valores dos inputs e compara com o sorteio
 for (let i = 0; sorteio.length >  i; i++){
     numero1 = document.getElementById("inpNumero1LoteriaLotoFacil").value
     numero2 = document.getElementById("inpNumero2LoteriaLotoFacil").value
@@ -70,6 +75,7 @@ for (let i = 0; sorteio.length >  i; i++){
     numero19 = document.getElementById("inpNumero19LoteriaLotoFacil").value
     numero20 = document.getElementById("inpNumero20LoteriaLotoFacil").value
 
+//Comparação de cada input
     if (numero1 == sorteio[i]){
         acertos++
         document.getElementById("inpNumero1LoteriaLotoFacil").style.backgroundColor = 'green'
@@ -154,40 +160,40 @@ for (let i = 0; sorteio.length >  i; i++){
         document.getElementById("inpNumero20LoteriaLotoFacil").style.backgroundColor = 'green'
     }
 }
-    
+    //Encerra o jogo assim que tenta
     if (contador >= 1){
         document.getElementById("botaoLoteriaLotoFacil").disabled = true;
     }
-
+//Mostra a quantidade de acertos e o quanto ganhou
 if (acertos < 11 ){
-    document.getElementById('divResultadosLotoFacil').innerHTML = 'Resultados: ' + acertos + ' acertos!'
+    document.getElementById('divResultadosLotoFacil').innerHTML = `Resultados: ${acertos} acertos!`
 }
 
 if (acertos == 11){
-    document.getElementById('divResultadosLotoFacil').innerHTML = 'Resultados: ' + acertos + ' acertos!' + '<br>' +
-    'Ganhou R$5,00!!!'
+    document.getElementById('divResultadosLotoFacil').innerHTML = `Resultados: ${acertos} acertos! ${'<br>'} 
+    Ganhou R$5,00!!!`
 }
 
 if (acertos == 12){
-    document.getElementById('divResultadosLotoFacil').innerHTML = 'Resultados: ' + acertos + ' acertos!' + '<br>' +
-    'Ganhou R$10,00!!!'
+    document.getElementById('divResultadosLotoFacil').innerHTML = `Resultados: ${acertos} acertos! ${'<br>'} 
+    Ganhou R$10,00!!!`
 }
 if (acertos == 13){
-    document.getElementById('divResultadosLotoFacil').innerHTML = 'Resultados: ' + acertos + ' acertos!' + '<br>' +
-    'Ganhou R$25,00!!!'
+    document.getElementById('divResultadosLotoFacil').innerHTML = `Resultados: ${acertos} acertos! ${'<br>'} 
+    Ganhou R$25,00!!!`
 }
 if (acertos == 14){
-    document.getElementById('divResultadosLotoFacil').innerHTML = 'Resultados: ' + acertos + ' acertos!' + '<br>' +
-    'Ganhou R$500.000,00!!!'
+    document.getElementById('divResultadosLotoFacil').innerHTML = `Resultados: ${acertos} acertos! ${'<br>'} 
+    Ganhou R$500.000,00!!!`
 }
 if (acertos == 15){
-    document.getElementById('divResultadosLotoFacil').innerHTML = 'Resultados: ' + acertos + ' acertos!' + '<br>' +
-    'Ganhou R$1.000.000,00, com esse talento, já deveria estar jogando o real!'
+    document.getElementById('divResultadosLotoFacil').innerHTML = `Resultados: ${acertos} acertos! ${'<br>'} 
+    Ganhou R$1.000.000,00, com esse talento, já deveria estar jogando o real!`
 }
 
 }
 
-
+//Botão em que reinicia o jogo
 function tenteDeNovoLoteriaLotoFacil(){
     document.getElementById("botaoLoteriaLotoFacil").disabled = false;
     contador = 0
@@ -208,7 +214,7 @@ function tenteDeNovoLoteriaLotoFacil(){
     sorteio[i] = numeroSorteado
     i = i + 1
     }
-
+//Deixa as bolinhas vazias
 document.getElementById("inpNumero1LoteriaLotoFacil").value = ''
 document.getElementById("inpNumero2LoteriaLotoFacil").value = ''
 document.getElementById("inpNumero3LoteriaLotoFacil").value = ''
@@ -229,7 +235,7 @@ document.getElementById("inpNumero17LoteriaLotoFacil").value = ''
 document.getElementById("inpNumero18LoteriaLotoFacil").value = ''
 document.getElementById("inpNumero19LoteriaLotoFacil").value = ''
 document.getElementById("inpNumero20LoteriaLotoFacil").value = ''
-
+//E brancas
 document.getElementById("inpNumero1LoteriaLotoFacil").style.backgroundColor = 'white'
 document.getElementById("inpNumero2LoteriaLotoFacil").style.backgroundColor = 'white'
 document.getElementById("inpNumero3LoteriaLotoFacil").style.backgroundColor = 'white'
@@ -253,7 +259,7 @@ document.getElementById("inpNumero20LoteriaLotoFacil").style.backgroundColor = '
 }
 
 
-
+//Recarrega a página
 function Volte(){
 location.reload()
 }
